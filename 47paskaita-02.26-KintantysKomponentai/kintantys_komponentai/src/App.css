@@ -1,0 +1,46 @@
+.card {
+    box-sizing: border-box;
+    border: 3px dashed black;
+    display: flex;
+    gap: 10px;
+    width: 650px;
+    height: 400px;
+    padding: 5px;
+    > div {
+        height: 100%;
+        > img {
+            width: auto;
+            height: 30%;
+            object-fit: contain;
+            float: left;
+            margin-right: 10px;
+        }
+        > h1 {
+            font-size: 1.25rem;
+            text-align: center;
+        }
+        > p {
+            margin-bottom: 0;
+            text-align: justify;
+        }
+    }
+    > iframe {
+        width: 45%;
+        height: 80%;
+        align-self: center;
+    }
+
+}
+
+#cards {
+    > h1 {
+        text-align: center;
+        font-size: 3.5rem;
+    }
+    > div {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+}
