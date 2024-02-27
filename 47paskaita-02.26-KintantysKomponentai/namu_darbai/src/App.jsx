@@ -31,12 +31,12 @@ const App = () => {
     }    
   ]
   return (
-    <>
+    <main>
       <Hero />
       <Portfolio 
         data={images}
       />
-    </>
+    </main>
   );
 }
 
