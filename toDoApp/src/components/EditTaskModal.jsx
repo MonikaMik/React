@@ -25,7 +25,7 @@ const EditTaskModal = ({task, editTask, isDialogOpen, setIsDialogOpen}) => {
 
     const formSubmit = e => {
       e.preventDefault();
-      editTask({ ...task, isCompleted: false, title: editedTask ? editedTask : task.title, dueDate: editedDate ? new Date(editedDate) : task.dueDate, isUrgent: checkIfUrgent() });
+      editTask({ ...task, isCompleted: false, title: editedTask ? editedTask : task.title, dueDate: editedDate ? new Date(editedDate) : task.dueDate, isUrgent: checkIfUrgent()});
       setIsDialogOpen(false);
     };
 

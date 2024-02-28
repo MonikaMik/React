@@ -1,0 +1,182 @@
+@import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family: "Montserrat", sans-serif;
+}
+.dishCard {
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 16px;
+    display: inline-block;
+    background-color: rgba(240, 240, 240, 0.999);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    > img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        position: relative;
+        z-index: 2;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    >h3 {
+        position: absolute;
+        font-size: 1.5rem;
+        top: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.774);
+        border-left: 3px solid lightgrey;
+        border-top: 3px solid lightgrey;
+        border-bottom: 3px solid lightgrey;
+        padding: 0.5rem 1rem;
+        border-radius: 10px 0 0 10px;
+        font-weight: 600;
+        z-index: 3;
+    } 
+    > div {
+        padding: 0 1rem;
+        > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            > p:first-child {
+                font-size: 1.2rem;
+                font-weight: 600;
+                text-align: center;
+            }
+        } 
+        > .bottomText {
+            .iconContainer {
+                display: flex;
+                gap: 0.8rem;
+                > i {
+                    border: none;
+                    cursor: pointer;
+                    font-size: 1.5rem;
+                }
+                > .bi-pencil:hover {
+                    color: orange;
+                    transform: scale(1.1);
+                }
+                > .bi-trash:hover {
+                    color:#ff6973;
+                    transform: scale(1.1);
+                }
+            }
+           
+            > input {
+                display: none;
+            }
+            > label {
+                display: inline-block;
+                margin: 0 0 0.5rem;
+                border-radius: 10px;
+                padding: 10px;
+                cursor: pointer;
+            }
+        }
+
+        > ul {
+            margin-top: -0.5rem;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 0;
+            > li {
+                border: 1px solid grey;
+                padding: 2px 5px;
+                border-radius: 3px;
+                font-size: 0.9rem;
+                color: rgb(85, 85, 85);
+            }
+        }
+    }
+
+}
+
+.overlay {
+    height: 40%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+}
+
+section {
+    padding-inline: 30px;
+    > h1 {
+        text-align: center;
+        font-size: 3rem;
+    }
+}
+#ourDishes {
+    > .dishesContainer {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 2rem;
+        column-gap: 1rem;
+        justify-content: space-around;
+        margin-bottom: 2rem;
+    }
+}
+
+.red {
+    background-color: #ff6973
+}
+.green {
+    background-color: #00ce7a;
+}
+
+#dishform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 36rem;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: rgba(240, 240, 240, 0.999);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
+    > input[type='text'], input[type='url'], input[type='number'], textarea {
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid grey;
+    }
+    > div {
+        margin-bottom: 1rem;
+    }
+    > input[type='submit'] {
+        padding: 10px 12px;
+        border-radius: 5px;
+        align-self: center;
+        border: none;
+        background-color: #00ce7a;
+        cursor: pointer;
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+}
+
+header {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration-line: underline;
+    text-underline-offset: 5px;
+}
