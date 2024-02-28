@@ -1,6 +1,6 @@
 import Patiekalas from "./Patiekalas";
 
-const Patiekalai = ({ dishes, statusChange, deleteDish }) => {
+const Patiekalai = ({ dishes, statusChange, deleteDish, keistiPatiekala }) => {
     return ( 
         <section id='ourDishes'>
             <h1>Musu patiekalai</h1>
@@ -11,6 +11,7 @@ const Patiekalai = ({ dishes, statusChange, deleteDish }) => {
                         dish={dish}
                         statusChange={statusChange}
                         deleteDish={deleteDish}
+                        keistiPatiekala={keistiPatiekala}
                     />
                 )}
             </div>

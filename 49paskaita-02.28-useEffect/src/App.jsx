@@ -72,6 +72,7 @@ const App = () => {
   // ]);
 
   const [dishes, setDishes] = useState([]);
+  const [ editedId, setEditedId ] = useState('');
 
   useEffect(() => {
     fetch("http://localhost:3001/dishes")
@@ -103,6 +104,37 @@ const App = () => {
     );
   };
 
+  const keistiPatiekala = dish => {
+    setEditedId(dish.id);
+    setFormInputs({
+      pavadinimas: dish.pavadinimas,
+      nuotrauka: dish.nuotrauka,
+      kilmesSalis: dish.kilmesSalis,
+      ragautas: dish.ragautas,
+      ingridientai: dish.ingridientai.join(','),
+      kainaNuo: dish.kaina.nuo,
+      kainaIki: dish.kaina.iki
+    });
+  }
+
+  const editDish = redaguotasPatiekalas => {
+    redaguotasPatiekalas.id = editedId;
+    setDishes(
+      dishes.map((dish) => {
+        if (String(dish.id) === String(editedId)) {
+          fetch(`http://localhost:3001/dishes/${editedId}`, {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify(redaguotasPatiekalas),
+          });
+          return redaguotasPatiekalas;
+        } else {
+          return dish;
+        }
+      })
+    );
+  }
+
   const trintiPatiekala = id => {
     setDishes(dishes.filter((dish) => dish.id !== id));
     fetch(`http://localhost:3001/dishes/${id}`, {
@@ -131,11 +163,15 @@ const App = () => {
         formInputs={formInputs}
         setFormInputs={setFormInputs}
         addDish={papildytiPatiekaluSarasa}
+        editedId={editedId}
+        setEditedId={setEditedId}
+        editDish={editDish}
       />
       <Patiekalai
         dishes={dishes}
         statusChange={keistiPatiekaloStatusa}
         deleteDish={trintiPatiekala}
+        keistiPatiekala={keistiPatiekala}
       />
     </>
   );

@@ -1,54 +1,36 @@
 {
   "dishes": [
     {
-      "id": "0",
-      "pavadinimas": "Kebabas",
-      "nuotrauka": "https://www.lamaistas.lt/uploads/modules/articles/original/2019/09/45115.jpg",
-      "kilmesSalis": "Turkija",
-      "ragautas": true,
-      "ingridientai": [
-        "mesa",
-        "padazas",
-        "kopustas",
-        "lavasas"
-      ],
-      "kaina": {
-        "nuo": 5,
-        "iki": 10
-      }
-    },
-    {
       "id": "1",
       "pavadinimas": "Pica",
       "nuotrauka": "https://www.lamaistas.lt/uploads/modules/articles/original/2022/01/45365.jpg",
       "kilmesSalis": "Italija",
-      "ragautas": true,
       "ingridientai": [
         "mesa",
-        "padas",
         "suris",
-        "padazas"
+        "pomidoru padazas"
       ],
       "kaina": {
         "nuo": 8,
         "iki": 16
-      }
+      },
+      "ragautas": false
     },
     {
       "id": "2",
       "pavadinimas": "Cepelinai",
       "nuotrauka": "https://tv3.lt/Uploads/UArticles/leadPhotos/b1/f0/b9/00/b1f0b900ddb3deef12856c8b8abdc64c.jpg",
       "kilmesSalis": "Lietuva",
-      "ragautas": true,
       "ingridientai": [
         "mesa",
-        "bulves",
-        "grietine"
+        " bulves",
+        " grietine"
       ],
       "kaina": {
         "nuo": 1.5,
         "iki": 5
-      }
+      },
+      "ragautas": true
     },
     {
       "id": "3",
@@ -58,12 +40,12 @@
       "ragautas": false,
       "ingridientai": [
         "zuvis",
-        "laimas",
-        "darzoves"
+        "    laimas",
+        "    darzoves"
       ],
       "kaina": {
         "nuo": 10,
-        "iki": 20
+        "iki": 18
       }
     },
     {
@@ -90,12 +72,27 @@
       "ingridientai": [
         "bulves",
         "suris",
-        "padazas",
-        "prieskoniai"
+        "padazas"
       ],
       "kaina": {
         "nuo": 4,
         "iki": 8
+      }
+    },
+    {
+      "id": "1709141564595",
+      "pavadinimas": "Kebabas",
+      "nuotrauka": "https://www.lamaistas.lt/uploads/modules/articles/original/2019/09/45115.jpg",
+      "kilmesSalis": "Turkija",
+      "ragautas": true,
+      "ingridientai": [
+        "mesa",
+        "kopustai",
+        "padazas"
+      ],
+      "kaina": {
+        "nuo": 4,
+        "iki": 10
       }
     }
   ]

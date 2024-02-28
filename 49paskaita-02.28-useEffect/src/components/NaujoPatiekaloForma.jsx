@@ -1,4 +1,4 @@
-const NaujoPatiekaloForma = ({ formInputs, setFormInputs, addDish }) => {
+const NaujoPatiekaloForma = ({ formInputs, setFormInputs, addDish, editDish, editedId, setEditedId }) => {
 
     const formSubmit = e => {
         e.preventDefault();
@@ -9,14 +9,15 @@ const NaujoPatiekaloForma = ({ formInputs, setFormInputs, addDish }) => {
             nuotrauka: formInputs.nuotrauka,
             kilmesSalis: formInputs.kilmesSalis,
             ragautas: formInputs.ragautas,
-            ingridientai: formInputs.ingridientai.split('; '),
+            ingridientai: formInputs.ingridientai.split(','),
             kaina: {
               nuo: Number(formInputs.kainaNuo),
               iki: Number(formInputs.kainaIki)
             }
         };
-        addDish(newDishData);
-    
+
+        editedId ? editDish(newDishData) : addDish(newDishData);
+
         setFormInputs({
           pavadinimas: '',
           nuotrauka: '',
@@ -26,6 +27,7 @@ const NaujoPatiekaloForma = ({ formInputs, setFormInputs, addDish }) => {
           kainaNuo: '',
           kainaIki: ''
         });
+        setEditedId('');
     }
 
     const handleInputChange = e => {
@@ -97,7 +99,7 @@ const NaujoPatiekaloForma = ({ formInputs, setFormInputs, addDish }) => {
                     value={formInputs.kainaIki}
                     onChange={e => handleInputChange(e)}
                 /><br />
-                <input type="submit" value="Prideti patiekala" />
+                <input type="submit" value={!editedId ? "Prideti patiekala" : "Redaguoti patiekala"}/>
             </form>
         </section>
      );

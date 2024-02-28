@@ -1,6 +1,6 @@
 import ListItem from "./ListItem";
 
-const Patiekalas = ({ dish, statusChange, deleteDish }) => {
+const Patiekalas = ({ dish, statusChange, deleteDish, keistiPatiekala }) => {
 
    // const bgColor = dish.ragautas ? "green" : "red";
 
@@ -40,6 +40,7 @@ const Patiekalas = ({ dish, statusChange, deleteDish }) => {
                     <div className="iconContainer">
                         <i 
                             className="bi bi-pencil"
+                            onClick={()=>keistiPatiekala(dish)}   
                         ></i>
                         <i 
                             className='bi bi-trash'
