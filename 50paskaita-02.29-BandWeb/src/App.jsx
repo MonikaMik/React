@@ -2,16 +2,96 @@ import './App.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import BandCards from "./components/BandCards";
+import NewBandForm from "./components/NewBandForm";
+import { useState, useEffect } from "react";
 
 const App = () => {
+
+  const [bands, setBands] = useState([]);
+  const [showForm, setShowForm] = useState(false);
+  const [formInputs, setFormInputs] = useState({
+    name: "",
+    picture: "",
+    members: "",
+    genre: "",
+    liked: false,
+    formed: ""
+  });
+
+  useEffect(() => {
+    fetch('http://localhost:8080/bands')
+      .then(res => res.json())
+      .then(data => setBands(data))
+  }, []);
+
+  const addBand = newBand => {
+    setBands([ ...bands, newBand ]);
+    fetch('http://localhost:8080/bands', {
+      method: "POST",
+      headers: { "Content-type" : "application/json" },
+      body: JSON.stringify(newBand)
+    });
+  }
+
+  const changeStatus = id => {
+    setBands(
+      bands.map(band => {
+        if(band.id === id) {
+          fetch(`http://localhost:8080/bands/${id}`, {
+            method: "PATCH",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              liked: !band.liked,
+            })
+          });
+          return {
+            ...band,
+            liked: !band.liked
+          };
+        } else {
+          return band;
+        }
+      })
+    )
+  }
+
+  const deleteBand = id => {
+    setBands(bands.filter(band => band.id !== id));
+    fetch(`http://localhost:8080/bands/${id}`, {
+            method: "DELETE",
+            headers: { "Content-type": "application/json" }
+      });
+  }
+
   return (
-    <>
-    <Header />
-    <main>
-      <BandCards />
-    </main>
-    <Footer />
-    </>
+    <div className='wrapper'>
+      <Header
+        likedBands={(bands.filter(band => band.liked)).length}
+      />
+      <main>
+        <p onClick={() => {setShowForm(!showForm)}}>
+          {
+            !showForm ? <i class="fa-regular fa-square-plus"></i> : <i class="fa-regular fa-square-minus"></i>
+          }
+          ADD A NEW BAND
+        </p>
+        {
+          showForm === true &&  
+            <NewBandForm 
+              formInputs={formInputs}
+              setFormInputs={setFormInputs}
+              addBand={addBand}
+            />
+        }
+      
+        <BandCards 
+          bands={bands}
+          changeStatus={changeStatus}
+          deleteBand={deleteBand}
+        />
+      </main>
+      <Footer />
+    </div>
   );
 }
 
