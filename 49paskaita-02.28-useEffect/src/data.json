@@ -14,13 +14,14 @@
         "nuo": 8,
         "iki": 16
       },
-      "ragautas": false
+      "ragautas": true
     },
     {
       "id": "2",
       "pavadinimas": "Cepelinai",
       "nuotrauka": "https://tv3.lt/Uploads/UArticles/leadPhotos/b1/f0/b9/00/b1f0b900ddb3deef12856c8b8abdc64c.jpg",
       "kilmesSalis": "Lietuva",
+      "ragautas": true,
       "ingridientai": [
         "mesa",
         " bulves",
@@ -29,8 +30,7 @@
       "kaina": {
         "nuo": 1.5,
         "iki": 5
-      },
-      "ragautas": true
+      }
     },
     {
       "id": "3",
@@ -45,7 +45,7 @@
       ],
       "kaina": {
         "nuo": 10,
-        "iki": 18
+        "iki": 20
       }
     },
     {

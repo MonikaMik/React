@@ -1,8 +1,19 @@
 import ListItem from "./ListItem";
 
-const Patiekalas = ({ dish, statusChange, deleteDish, keistiPatiekala }) => {
+const Patiekalas = ({ dish, statusChange, deleteDish, setEditedId, setFormInputs }) => {
 
-   // const bgColor = dish.ragautas ? "green" : "red";
+    const keistiPatiekala = dish => {
+        setEditedId(dish.id);
+        setFormInputs({
+          pavadinimas: dish.pavadinimas,
+          nuotrauka: dish.nuotrauka,
+          kilmesSalis: dish.kilmesSalis,
+          ragautas: dish.ragautas,
+          ingridientai: dish.ingridientai.join(','),
+          kainaNuo: dish.kaina.nuo,
+          kainaIki: dish.kaina.iki
+        });
+      }
 
     return ( 
         <div className='dishCard'>

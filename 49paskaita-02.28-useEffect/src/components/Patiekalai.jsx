@@ -1,6 +1,6 @@
 import Patiekalas from "./Patiekalas";
 
-const Patiekalai = ({ dishes, statusChange, deleteDish, keistiPatiekala }) => {
+const Patiekalai = ({ dishes, statusChange, deleteDish, setEditedId, setFormInputs }) => {
     return ( 
         <section id='ourDishes'>
             <h1>Musu patiekalai</h1>
@@ -11,7 +11,8 @@ const Patiekalai = ({ dishes, statusChange, deleteDish, keistiPatiekala }) => {
                         dish={dish}
                         statusChange={statusChange}
                         deleteDish={deleteDish}
-                        keistiPatiekala={keistiPatiekala}
+                        setEditedId={setEditedId}
+                        setFormInputs={setFormInputs}
                     />
                 )}
             </div>

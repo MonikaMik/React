@@ -104,19 +104,6 @@ const App = () => {
     );
   };
 
-  const keistiPatiekala = dish => {
-    setEditedId(dish.id);
-    setFormInputs({
-      pavadinimas: dish.pavadinimas,
-      nuotrauka: dish.nuotrauka,
-      kilmesSalis: dish.kilmesSalis,
-      ragautas: dish.ragautas,
-      ingridientai: dish.ingridientai.join(','),
-      kainaNuo: dish.kaina.nuo,
-      kainaIki: dish.kaina.iki
-    });
-  }
-
   const editDish = redaguotasPatiekalas => {
     redaguotasPatiekalas.id = editedId;
     setDishes(
@@ -171,7 +158,8 @@ const App = () => {
         dishes={dishes}
         statusChange={keistiPatiekaloStatusa}
         deleteDish={trintiPatiekala}
-        keistiPatiekala={keistiPatiekala}
+        setEditedId={setEditedId}
+        setFormInputs={setFormInputs}
       />
     </>
   );
