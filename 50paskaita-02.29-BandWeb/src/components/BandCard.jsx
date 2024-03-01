@@ -1,12 +1,14 @@
-const BandCard = ({ band, changeStatus, deleteBand }) => {
+const BandCard = ({ band, changeStatus, deleteBand, editBand }) => {
+ 
     return (  
+        <>
         <div className='bandCard'>
             <img 
                 src={band.picture} 
                 alt={band.name} 
             />
              <i 
-                className={`fa-regular fa-face-grin-hearts ${band.liked ? 'yellowIcon' : 'greyIcon'}`}
+                className={band.liked ? 'fa-regular fa-face-grin-hearts yellowIcon' : 'far fa-frown greyIcon'}
                 onClick={() => changeStatus(band.id)}
             ></i>
             <div className='bandInfo'>
@@ -29,12 +31,20 @@ const BandCard = ({ band, changeStatus, deleteBand }) => {
                     }
                 </div>
             </div>
-            <i 
-                className="fa-regular fa-trash-can"
-                onClick={() => deleteBand(band.id)}
-            >
-            </i>
+            <div className='iconContainer'>
+                <i 
+                    className="far fa-edit"
+                    onClick={() => editBand(band)}
+                >
+                </i>
+                <i 
+                    className="fa-regular fa-trash-can"
+                    onClick={() => deleteBand(band.id)}
+                >
+                </i>
+            </div>
         </div>
+        </>
     );
 }
  

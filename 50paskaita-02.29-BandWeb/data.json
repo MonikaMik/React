@@ -51,7 +51,7 @@
         " Taylor Yorke"
       ],
       "genre": "Alternative",
-      "liked": true,
+      "liked": false,
       "formed": 2004
     },
     {
@@ -62,7 +62,7 @@
         "Rou Reynolds",
         "Rory Clewlow",
         "Rob Rolfe",
-        "\t\nChris Batten\n"
+        "Chris Batten\n"
       ],
       "genre": "Rock",
       "liked": true,
@@ -81,6 +81,41 @@
       "genre": "Garage rock",
       "liked": true,
       "formed": 1998
+    },
+    {
+      "id": "1709237496989",
+      "name": "Nothing but Thieves",
+      "picture": "https://www.ekathimerini.com/wp-content/uploads/2024/02/NothingButThievesWarRoadMusicManagement.jpg",
+      "members": [
+        "Conor Mason",
+        "Joe Langridge-Brown",
+        "Dominic Craik",
+        "Philip Blake",
+        "James Price"
+      ],
+      "genre": "Alternative",
+      "liked": true,
+      "formed": 2012
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "monika",
+      "password": "testas",
+      "email": "mon@test.com"
+    },
+    {
+      "id": "1709236929812",
+      "name": "Rytis",
+      "password": "rytis",
+      "email": "rytis@rytis.com"
+    },
+    {
+      "id": "1709297372162",
+      "name": "ddd",
+      "password": "ddddd",
+      "email": "monikacibirauskaite@yahoo.com"
     }
   ]
 }

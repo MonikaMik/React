@@ -9,13 +9,36 @@ const App = () => {
 
   const [bands, setBands] = useState([]);
   const [showForm, setShowForm] = useState(false);
+  const [user, setUser] = useState("");
+
   const [formInputs, setFormInputs] = useState({
     name: "",
     picture: "",
     members: "",
     genre: "",
-    liked: false,
-    formed: ""
+    liked: "like",
+    formed: "",
+  });
+
+  const [ editFormInputs, setEditFormInputs] = useState({
+    id:"",
+    name: "",
+    picture: "",
+    members: "",
+    genre: "",
+    formed: "",
+  });
+
+  const [ loginFormInputs, setLoginFormInputs] = useState({
+    username: "",
+    password: ""
+  });
+
+  const [ registerFormInputs, setRegisterFormInputs] = useState({
+    id: "",
+    username: "",
+    email: "",
+    password: ""
   });
 
   useEffect(() => {
@@ -31,6 +54,23 @@ const App = () => {
       headers: { "Content-type" : "application/json" },
       body: JSON.stringify(newBand)
     });
+  }
+
+  const editBand = editedBand => {
+    setBands(
+      bands.map(band => {
+        if(band.id === editedBand.id) {
+          fetch(`http://localhost:8080/bands/${editedBand.id}`, {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify(editedBand)
+          });
+          return editedBand;
+        } else {
+          return band;
+        }
+      })
+    )
   }
 
   const changeStatus = id => {
@@ -63,15 +103,48 @@ const App = () => {
       });
   }
 
+  const registerUser = newUser => {
+    fetch('http://localhost:8080/users')
+      .then(response => response.json())
+      .then(users => {
+        const userExists = users.some(user => user.name === newUser.name);
+        if (userExists) {
+          alert('Username already taken. Please choose another username.');
+          return;
+        }
+
+        fetch('http://localhost:8080/users', {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newUser)
+        })
+        .then(response => {
+          if(response.ok) {
+            setUser(newUser.name);
+            console.log('Registration successful');
+          }
+        })
+        .catch(error => console.error('Error registering user:', error));
+      })
+      .catch(error => console.error('Error fetching users:', error));
+  };
+
   return (
     <div className='wrapper'>
       <Header
         likedBands={(bands.filter(band => band.liked)).length}
+        loginFormInputs={loginFormInputs}
+        setLoginFormInputs={setLoginFormInputs}
+        setUser={setUser}
+        user={user}
+        registerFormInputs={registerFormInputs}
+        setRegisterFormInputs={setRegisterFormInputs}
+        registerUser={registerUser}
       />
       <main>
         <p onClick={() => {setShowForm(!showForm)}}>
           {
-            !showForm ? <i class="fa-regular fa-square-plus"></i> : <i class="fa-regular fa-square-minus"></i>
+            !showForm ? <i className="fa-regular fa-square-plus"></i> : <i className="fa-regular fa-square-minus"></i>
           }
           ADD A NEW BAND
         </p>
@@ -83,11 +156,13 @@ const App = () => {
               addBand={addBand}
             />
         }
-      
         <BandCards 
           bands={bands}
           changeStatus={changeStatus}
           deleteBand={deleteBand}
+          editFormInputs={editFormInputs}
+          setEditFormInputs={setEditFormInputs}
+          editBand={editBand}
         />
       </main>
       <Footer />
