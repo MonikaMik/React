@@ -51,7 +51,7 @@
         " Taylor Yorke"
       ],
       "genre": "Alternative",
-      "liked": false,
+      "liked": true,
       "formed": 2004
     },
     {
@@ -65,7 +65,7 @@
         "Chris Batten\n"
       ],
       "genre": "Rock",
-      "liked": true,
+      "liked": false,
       "formed": 2003
     },
     {
