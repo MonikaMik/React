@@ -29,19 +29,6 @@
       "formed": 1999
     },
     {
-      "id": "1709207610962",
-      "name": "Papa Roach",
-      "picture": "https://storage.googleapis.com/goout-wordpress-uploads/musicbarcz/2014/05/papa-roach-e1408616860651-1920x1080.jpg",
-      "members": [
-        "Jacoby Shaddix",
-        " David Buckner",
-        " Tobin Esperance"
-      ],
-      "genre": "Alternative rock",
-      "liked": false,
-      "formed": 1993
-    },
-    {
       "id": "1709207918362",
       "name": "Paramore",
       "picture": "https://upload.wikimedia.org/wikipedia/lt/e/eb/ParamoreParamore.png",
@@ -51,7 +38,7 @@
         " Taylor Yorke"
       ],
       "genre": "Alternative",
-      "liked": true,
+      "liked": false,
       "formed": 2004
     },
     {

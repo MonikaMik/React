@@ -5,12 +5,25 @@ import BandCards from "./components/BandCards";
 import NewBandForm from "./components/NewBandForm";
 import { useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
+import styled from "styled-components";
+
+const StyledMain = styled.main`
+  padding: 0 5%;
+  > p:first-child {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 0;
+    &:hover {
+      color: var(--yellow);
+      cursor: pointer;
+    }
+  }
+`;
 
 const App = () => {
   const [bands, setBands] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [user, setUser] = useState("");
-
   const [formInputs, setFormInputs] = useState({
     name: "",
     picture: "",
@@ -19,7 +32,6 @@ const App = () => {
     liked: "like",
     formed: "",
   });
-
   const [editFormInputs, setEditFormInputs] = useState({
     id: "",
     name: "",
@@ -28,12 +40,10 @@ const App = () => {
     genre: "",
     formed: "",
   });
-
   const [loginFormInputs, setLoginFormInputs] = useState({
     username: "",
     password: "",
   });
-
   const [registerFormInputs, setRegisterFormInputs] = useState({
     id: "",
     username: "",
@@ -60,17 +70,18 @@ const App = () => {
     setBands(
       bands.map((band) => {
         if (band.id === editedBand.id) {
-          fetch(`http://localhost:8080/bands/${editedBand.id}`, {
-            method: "PUT",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify(editedBand),
-          });
           return editedBand;
         } else {
           return band;
         }
       })
     );
+
+    fetch(`http://localhost:8080/bands/${editedBand.id}`, {
+      method: "PUT",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(editedBand),
+    });
   };
 
   const changeStatus = (id) => {
@@ -130,7 +141,7 @@ const App = () => {
   };
 
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       <Header
         likedBands={bands.filter((band) => band.liked).length}
         loginFormInputs={loginFormInputs}
@@ -141,19 +152,19 @@ const App = () => {
         setRegisterFormInputs={setRegisterFormInputs}
         registerUser={registerUser}
       />
-      <main>
+      <StyledMain>
         <p onClick={() => setShowForm(!showForm)}>
           {!showForm ? (
-            <i className='fa-regular fa-square-plus'></i>
+            <i className="fa-regular fa-square-plus"></i>
           ) : (
-            <i className='fa-regular fa-square-minus'></i>
+            <i className="fa-regular fa-square-minus"></i>
           )}
           ADD A NEW BAND
         </p>
         <CSSTransition
           in={showForm}
-          timeout={100}
-          classNames='fade'
+          timeout={300}
+          classNames="fade"
           unmountOnExit
           appear
         >
@@ -172,7 +183,7 @@ const App = () => {
           setEditFormInputs={setEditFormInputs}
           editBand={editBand}
         />
-      </main>
+      </StyledMain>
       <Footer />
     </div>
   );
