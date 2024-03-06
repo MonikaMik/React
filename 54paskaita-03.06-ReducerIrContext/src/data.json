@@ -1,0 +1,37 @@
+{
+  "staloZaidimai": [
+    {
+      "id": "0",
+      "pavadinimas": "Saboteur",
+      "nuotrauka": "https://www.brain-games.lt/cdn/shop/products/brain-games-lt-stalo-zaidimai-saboteur-22584446255283_1654x1654.jpg?v=1641897733",
+      "zaidejai": {
+        "kiekisNuo": 3,
+        "kiekisIki": 10,
+        "amziusNuo": 8
+      },
+      "aprasymas": "Vaidmenų kortų žaidimas, kurio metu žaidėjai įsikūnija į ieškančių aukso nykštukų vaidmenis. Vieni ieško aukso, tačiau kiti tampa diversantais, kurių tikslas — sutrukdyti rasti tą auksą."
+    },
+    {
+      "id": "1",
+      "pavadinimas": "Ticket to Ride",
+      "nuotrauka": "https://www.brain-games.lt/cdn/shop/products/days-of-wonder-stalo-zaidimai-ticket-to-ride-usa-37796057317625_1423x1500.jpg?v=1662643230",
+      "zaidejai": {
+        "kiekisNuo": 2,
+        "kiekisIki": 5,
+        "amziusNuo": 8
+      },
+      "aprasymas": "„Ticket to Ride: USA“ yra populiarus šeimos stalo žaidimas. Kiekvienas žaidėjas atstovauja savo traukinių tinklą, su kuriuo bando sujungti JAV miestus, nurodytus kiekviename jų traukinio biliete. Tačiau būkite atsargūs, nes traukinių bėgiai yra tokie, kokie yra. "
+    },
+    {
+      "id": "8fb0ccd1-171d-461c-9e52-f9b7a8fe49e4",
+      "pavadinimas": "I Know",
+      "nuotrauka": "https://www.brain-games.lt/cdn/shop/products/tactic-stalo-zaidimai-i-know-23035044397235_800x800.jpg?v=1641870731",
+      "zaidejai": {
+        "kiekisNuo": 2,
+        "kiekisIki": 6,
+        "amziusNuo": 15
+      },
+      "aprasymas": "Numatyk kitų žaidėjų spėjimus, panaudok savo žinias ir laimėk! Žaidime yra 1600 į 4 kategorijas suskirstytų klausimų ir net 4800 užuominų, padėsiančių į tuos klausimus atsakyti ir galbūt kartu suteiksiančių naujų žinių. Azartas, žinios ir sumanumas – visa tai – žaidime „iKNOW“."
+    }
+  ]
+}
