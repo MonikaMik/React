@@ -11,11 +11,20 @@ const FormInputProvider = ({ children }) => {
     amziusNuo: "",
     aprasymas: "",
   });
+
+  const handleInputChange = (e) => {
+    setFormInputs({
+      ...formInputs,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <FormInputContext.Provider
       value={{
         formInputs,
         setFormInputs,
+        handleInputChange,
       }}
     >
       {children}

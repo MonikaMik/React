@@ -30,15 +30,9 @@ const StyledForm = styled.form`
 
 const AddNewTableGame = () => {
   const { addNewGame } = useContext(TableGamesContext);
-  const { formInputs, setFormInputs } = useContext(FormInputContext);
+  const { formInputs, setFormInputs, handleInputChange } =
+    useContext(FormInputContext);
   const { setPageLoader } = useContext(PageLoaderContext);
-
-  const handleInputChange = (e) => {
-    setFormInputs({
-      ...formInputs,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   const formSubmit = (e) => {
     e.preventDefault();
