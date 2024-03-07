@@ -37,7 +37,7 @@ const TableGameCard = ({ game }) => {
   const { dispatch } = useContext(TableGamesContext);
   const { formDispatch } = useContext(FormInputsContext);
   const { setPageLoader } = useContext(PageLoaderContext);
-
+  
   return (
     <StyleCardDiv $arPazymetas={game.pazymetas}>
       <h3>{game.pavadinimas.toUpperCase()}</h3>

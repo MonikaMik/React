@@ -1,0 +1,108 @@
+{
+  "bands": [
+    {
+      "id": "1",
+      "name": "Korn",
+      "picture": "https://m.media-amazon.com/images/M/MV5BMjE3MjQ4MTE3N15BMl5BanBnXkFtZTgwODM5NjIyMDI@._V1_.jpg",
+      "members": [
+        "Jonathan Davis",
+        "Brian Welch",
+        "Reginald Arvizu",
+        "James Shaffer"
+      ],
+      "genre": "nu metal",
+      "liked": false,
+      "formed": 1993
+    },
+    {
+      "id": "2",
+      "name": "Avenged Sevenfold",
+      "picture": "https://www.billboard.com/wp-content/uploads/media/avenged-sevenfold-2017-billboard-1548.jpg",
+      "members": [
+        "M Shadows",
+        "The Rev",
+        "Synyster Gates",
+        "Zacky Vengeance"
+      ],
+      "genre": "Progressive metal",
+      "liked": false,
+      "formed": 1999
+    },
+    {
+      "id": "1709207918362",
+      "name": "Paramore",
+      "picture": "https://upload.wikimedia.org/wikipedia/lt/e/eb/ParamoreParamore.png",
+      "members": [
+        "Hayley Williams",
+        "Josh Farro",
+        " Taylor Yorke"
+      ],
+      "genre": "Alternative",
+      "liked": false,
+      "formed": 2004
+    },
+    {
+      "id": "1709208587946",
+      "name": "Enter Shikari",
+      "picture": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/05/26/01/entershikari-17-tm-1-web.jpg?quality=75&width=1200&auto=webp",
+      "members": [
+        "Rou Reynolds",
+        "Rory Clewlow",
+        "Rob Rolfe",
+        "Chris Batten\n"
+      ],
+      "genre": "Rock",
+      "liked": false,
+      "formed": 2003
+    },
+    {
+      "id": "1709208710436",
+      "name": "The Strokes",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/The_Strokes_by_Roger_Woolman.jpg/1200px-The_Strokes_by_Roger_Woolman.jpg",
+      "members": [
+        "Julian Casablancas",
+        "Nikolai Fraiture",
+        "Albert Hammond Jr.",
+        "Fabrizio Moretti"
+      ],
+      "genre": "Garage rock",
+      "liked": true,
+      "formed": 1998
+    },
+    {
+      "id": "1709237496989",
+      "name": "Nothing but Thieves",
+      "picture": "https://www.ekathimerini.com/wp-content/uploads/2024/02/NothingButThievesWarRoadMusicManagement.jpg",
+      "members": [
+        "Conor Mason",
+        "Joe Langridge-Brown",
+        "Dominic Craik",
+        "Philip Blake",
+        "James Price"
+      ],
+      "genre": "Alternative",
+      "liked": true,
+      "formed": 2012
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "monika",
+      "password": "testas",
+      "email": "mon@test.com"
+    },
+    {
+      "id": "1709236929812",
+      "name": "Rytis",
+      "password": "rytis",
+      "email": "rytis@rytis.com"
+    },
+    {
+      "id": "1709297372162",
+      "name": "ddd",
+      "password": "ddddd",
+      "email": "monikacibirauskaite@yahoo.com"
+    }
+  ]
+}
