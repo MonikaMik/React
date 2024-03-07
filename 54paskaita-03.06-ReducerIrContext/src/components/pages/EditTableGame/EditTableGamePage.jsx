@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { v4 as uuid } from "uuid";
 import { useContext } from "react";
 import TableGamesContext from "../../../contexts/TableGamesContext";
 import FormInputContext from "../../../contexts/FormInputContext";
@@ -22,7 +21,7 @@ const StyledForm = styled.form`
     background-color: salmon;
     border: none;
     width: 10rem;
-    align-self: flex-end;
+    /* align-self: flex-end; */
     &:hover {
       background-color: #d46255;
       cursor: pointer;
@@ -30,7 +29,20 @@ const StyledForm = styled.form`
   }
 `;
 
-const AddNewTableGame = () => {
+const StyledButton = styled.button`
+  background-color: lightgrey;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  border: none;
+  width: 10rem;
+  margin-left: 1rem;
+  &:hover {
+    background-color: darkGrey;
+    cursor: pointer;
+  }
+`;
+
+const EditTableGamePage = () => {
   const { dispatch } = useContext(TableGamesContext);
   const { formInputs, formDispatch } = useContext(FormInputContext);
   const { setPageLoader } = useContext(PageLoaderContext);
@@ -38,8 +50,8 @@ const AddNewTableGame = () => {
   const formSubmit = (e) => {
     e.preventDefault();
 
-    const newTableGame = {
-      id: uuid(),
+    const editedTableGame = {
+      id: formInputs.id,
       pavadinimas: formInputs.pavadinimas,
       nuotrauka: formInputs.nuotrauka,
       zaidejai: {
@@ -50,17 +62,14 @@ const AddNewTableGame = () => {
       pazymetas: formInputs.pazymetas,
       aprasymas: formInputs.aprasymas,
     };
-
-    dispatch({ type: actionTypes.ADD_NEW, data: newTableGame });
-
+    dispatch({ type: actionTypes.EDIT_FULL, editedGame: editedTableGame });
     setPageLoader("cards");
-
     formDispatch({ type: inputActionTypes.CLEAR_FORM });
   };
 
   return (
     <section>
-      <h1>Add new Table Game</h1>
+      <h1>Edit Table Game</h1>
       <StyledForm onSubmit={formSubmit}>
         <input
           type="text"
@@ -163,10 +172,18 @@ const AddNewTableGame = () => {
             });
           }}
         />
-        <input type="submit" value="Add game" />
+        <input type="submit" value="Edit game" />
       </StyledForm>
+      <StyledButton
+        onClick={() => {
+          formDispatch({ type: inputActionTypes.CLEAR_FORM });
+          setPageLoader("cards");
+        }}
+      >
+        Cancel edit
+      </StyledButton>
     </section>
   );
 };
 
-export default AddNewTableGame;
+export default EditTableGamePage;
