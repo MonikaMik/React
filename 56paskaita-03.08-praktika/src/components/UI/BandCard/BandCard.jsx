@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { useContext } from 'react';
-import FormInputContext from '../contexts/FormInputContext';
-import { inputActionTypes } from '../contexts/FormInputContext';
+import EditFormContext, {
+	inputActionTypes
+} from '../../../contexts/EditFormContext';
+import BandContext from '../../../contexts/BandContext';
 
 const StyledBandCard = styled.div`
 	box-sizing: border-box;
@@ -54,8 +56,9 @@ const StyledIcon = styled.i`
 	}
 `;
 
-const BandCard = ({ band, changeStatus, deleteBand, editBand, showForm }) => {
-	const { formInputs, formDispatch } = useContext(FormInputContext);
+const BandCard = ({ band, showForm }) => {
+	const { editFormDispatch } = useContext(EditFormContext);
+	const { changeStatus, deleteBand } = useContext(BandContext);
 
 	return (
 		<>
@@ -67,7 +70,7 @@ const BandCard = ({ band, changeStatus, deleteBand, editBand, showForm }) => {
 							? 'fa-regular fa-face-grin-hearts yellowIcon'
 							: 'far fa-frown greyIcon'
 					}
-					onClick={() => changeStatus(band.id)}
+					onClick={() => changeStatus(band.id, band.liked)}
 				></StyledIcon>
 				<div className='bandInfo'>
 					<p className='yellow'>{band.name.toUpperCase()}</p>
@@ -89,7 +92,10 @@ const BandCard = ({ band, changeStatus, deleteBand, editBand, showForm }) => {
 					<i
 						className='far fa-edit'
 						onClick={() => {
-							formDispatch({ type: inputActionTypes.FILL_FORM, payload: band });
+							editFormDispatch({
+								type: inputActionTypes.FILL_FORM,
+								payload: band
+							});
 							showForm();
 						}}
 					></i>

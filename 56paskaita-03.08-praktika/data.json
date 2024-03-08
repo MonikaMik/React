@@ -25,7 +25,7 @@
         "Zacky Vengeance"
       ],
       "genre": "Progressive metal",
-      "liked": false,
+      "liked": true,
       "formed": 1999
     },
     {
@@ -38,7 +38,7 @@
         " Taylor Yorke"
       ],
       "genre": "Alternative",
-      "liked": false,
+      "liked": true,
       "formed": 2004
     },
     {
@@ -49,7 +49,7 @@
         "Rou Reynolds",
         "Rory Clewlow",
         "Rob Rolfe",
-        "Chris Batten\n"
+        "Chris Batten"
       ],
       "genre": "Rock",
       "liked": false,
@@ -66,8 +66,8 @@
         "Fabrizio Moretti"
       ],
       "genre": "Garage rock",
-      "liked": true,
-      "formed": 1998
+      "liked": false,
+      "formed": 1993
     },
     {
       "id": "1709237496989",
@@ -87,22 +87,32 @@
   ],
   "users": [
     {
-      "id": "1",
+      "id": "7b3f0416-aca0-4b0c-8a1f-abcafddd3399",
+      "name": "assf",
+      "password": "$2a$10$yx8S/7O2TFQAqNz14dmoXeIc57pc4qLodbHNMYt2lMvbXJqS6Mify",
+      "email": "monikacibirauskaite@yahoo.com",
+      "avatar": "https://static.vecteezy.com/system/resources/previews/014/194/216/original/avatar-icon-human-a-person-s-badge-social-media-profile-symbol-the-symbol-of-a-person-vector.jpg"
+    },
+    {
+      "id": "888d623c-75cd-4e34-92f1-f19889e54ea5",
       "name": "monika",
-      "password": "testas",
-      "email": "mon@test.com"
+      "password": "$2a$10$KKc2F2H4L0iHMmNfYeMkTuIaUb9XIFJ.qxLNvRlHgrHfYmBa2Inm6",
+      "email": "mon@mon",
+      "avatar": "https://static.vecteezy.com/system/resources/previews/014/194/216/original/avatar-icon-human-a-person-s-badge-social-media-profile-symbol-the-symbol-of-a-person-vector.jpg"
     },
     {
-      "id": "1709236929812",
+      "id": "3be06c9a-895a-4271-87a3-7017582a8a5d",
       "name": "Rytis",
-      "password": "rytis",
-      "email": "rytis@rytis.com"
+      "password": "$2a$10$cJhAQX7lP3oBnEQ/tC8XueJMgyyeKps39se3Z4aQQ6JwvgRwrRR8C",
+      "email": "monikacibirauskaite@yahoo.com",
+      "avatar": "htttp://"
     },
     {
-      "id": "1709297372162",
-      "name": "ddd",
-      "password": "ddddd",
-      "email": "monikacibirauskaite@yahoo.com"
+      "id": "295c61fc-d41d-4eba-b4f9-79df0790f6a5",
+      "name": "m",
+      "password": "$2a$10$8gMVlhuPBl.nJniVRKGpK.v.yVEF7b4QOdfje47UROWUAu6c7zprm",
+      "email": "monikacibirauskaite@yahoo.com",
+      "avatar": "https://static.vecteezy.com/system/resources/previews/014/194/216/original/avatar-icon-human-a-person-s-badge-social-media-profile-symbol-the-symbol-of-a-person-vector.jpg"
     }
   ]
 }

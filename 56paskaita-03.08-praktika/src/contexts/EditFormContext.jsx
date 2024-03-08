@@ -1,7 +1,7 @@
 import { createContext, useReducer } from 'react';
 
 // const FormInputContext = createContext();
-const FormInputContext = createContext({
+const EditFormContext = createContext({
 	formInputs: {
 		id: '',
 		name: '',
@@ -16,7 +16,7 @@ const FormInputContext = createContext({
 });
 
 const inputActionTypes = {
-	HANDLE_INPUT_CHANGE: 'reaguoti i pasikeitima inpute',
+	HANDLE_INPUT_CHANGE: 'reaguoti i pasikeitima impute',
 	CLEAR_FORM: 'isvalyti formos laukus',
 	FILL_FORM: 'uzpildyti forma esanciais duomenimis'
 };
@@ -55,8 +55,8 @@ const reducer = (state, action) => {
 	}
 };
 
-const FormInputContextProvider = ({ children }) => {
-	const [formInputs, formDispatch] = useReducer(reducer, {
+const EditFormContextProvider = ({ children }) => {
+	const [formInputs, editFormDispatch] = useReducer(reducer, {
 		id: '',
 		name: '',
 		picture: '',
@@ -68,7 +68,7 @@ const FormInputContextProvider = ({ children }) => {
 
 	const handleChange = event => {
 		const { name, value } = event.target;
-		formDispatch({
+		editFormDispatch({
 			type: inputActionTypes.HANDLE_INPUT_CHANGE,
 			payload: {
 				name,
@@ -78,17 +78,17 @@ const FormInputContextProvider = ({ children }) => {
 	};
 
 	return (
-		<FormInputContext.Provider
+		<EditFormContext.Provider
 			value={{
 				formInputs,
 				handleChange,
-				formDispatch
+				editFormDispatch
 			}}
 		>
 			{children}
-		</FormInputContext.Provider>
+		</EditFormContext.Provider>
 	);
 };
 
-export default FormInputContext;
-export { FormInputContextProvider, inputActionTypes };
+export default EditFormContext;
+export { EditFormContextProvider, inputActionTypes };
