@@ -5,6 +5,12 @@ import { useContext } from 'react';
 import UserContext, { userActionTypes } from '../../../contexts/UserContext';
 import { v4 as uuid } from 'uuid';
 import bcrypt from 'bcryptjs';
+import styled from 'styled-components';
+
+const ErrorMessage = styled.span`
+	color: red;
+	margin-bottom: 0;
+`;
 
 const RegisterForm = ({ hideLoginForm }) => {
 	const {
@@ -41,7 +47,7 @@ const RegisterForm = ({ hideLoginForm }) => {
 
 		if (registrationSuccess) {
 			dispatch({ type: inputActionTypes.CLEAR_FORM });
-			hideLoginForm(); // Only hide the form if registration was successful
+			hideLoginForm();
 		}
 	};
 	return (
@@ -92,10 +98,17 @@ const RegisterForm = ({ hideLoginForm }) => {
 					onChange={handleChange}
 					required
 				/>
+				<ErrorMessage>{userState.errorMessage}</ErrorMessage>
 				<input type='submit' value='Register' />
-				<p>{userState.errorMessage}</p>
 			</form>
-			<i className='far fa-times-circle' onClick={hideLoginForm}></i>
+			<i
+				className='far fa-times-circle'
+				onClick={() => {
+					dispatch({ type: inputActionTypes.CLEAR_FORM });
+					userDispatch({ type: userActionTypes.SET_ERROR, payload: '' });
+					hideLoginForm();
+				}}
+			></i>
 		</div>
 	);
 };

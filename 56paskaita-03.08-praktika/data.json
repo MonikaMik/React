@@ -11,7 +11,7 @@
         "James Shaffer"
       ],
       "genre": "nu metal",
-      "liked": false,
+      "liked": true,
       "formed": 1993
     },
     {
@@ -38,7 +38,7 @@
         " Taylor Yorke"
       ],
       "genre": "Alternative",
-      "liked": true,
+      "liked": false,
       "formed": 2004
     },
     {
@@ -66,7 +66,7 @@
         "Fabrizio Moretti"
       ],
       "genre": "Garage rock",
-      "liked": false,
+      "liked": true,
       "formed": 1993
     },
     {
@@ -81,18 +81,25 @@
         "James Price"
       ],
       "genre": "Alternative",
-      "liked": true,
+      "liked": false,
       "formed": 2012
+    },
+    {
+      "id": "560c5e42-1ec0-441b-9a1c-14a5da157086",
+      "name": "Arctic Monkeys",
+      "picture": "https://www.nme.com/wp-content/uploads/2017/09/2012ArcticMonkeys02DC011211.jpg",
+      "members": [
+        "Alex Turner",
+        "Matt Helders",
+        "Jamie Cook",
+        "Nick O'Malley"
+      ],
+      "genre": "Indie rock",
+      "liked": true,
+      "formed": 2002
     }
   ],
   "users": [
-    {
-      "id": "7b3f0416-aca0-4b0c-8a1f-abcafddd3399",
-      "name": "assf",
-      "password": "$2a$10$yx8S/7O2TFQAqNz14dmoXeIc57pc4qLodbHNMYt2lMvbXJqS6Mify",
-      "email": "monikacibirauskaite@yahoo.com",
-      "avatar": "https://static.vecteezy.com/system/resources/previews/014/194/216/original/avatar-icon-human-a-person-s-badge-social-media-profile-symbol-the-symbol-of-a-person-vector.jpg"
-    },
     {
       "id": "888d623c-75cd-4e34-92f1-f19889e54ea5",
       "name": "monika",
@@ -106,13 +113,6 @@
       "password": "$2a$10$cJhAQX7lP3oBnEQ/tC8XueJMgyyeKps39se3Z4aQQ6JwvgRwrRR8C",
       "email": "monikacibirauskaite@yahoo.com",
       "avatar": "htttp://"
-    },
-    {
-      "id": "295c61fc-d41d-4eba-b4f9-79df0790f6a5",
-      "name": "m",
-      "password": "$2a$10$8gMVlhuPBl.nJniVRKGpK.v.yVEF7b4QOdfje47UROWUAu6c7zprm",
-      "email": "monikacibirauskaite@yahoo.com",
-      "avatar": "https://static.vecteezy.com/system/resources/previews/014/194/216/original/avatar-icon-human-a-person-s-badge-social-media-profile-symbol-the-symbol-of-a-person-vector.jpg"
     }
   ]
 }

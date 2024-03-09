@@ -26,7 +26,7 @@ const StyledHeader = styled.header`
 	> div {
 		display: flex;
 		align-items: center;
-		gap: 2rem;
+		gap: 1.5rem;
 		> img {
 			height: 4rem;
 			width: 4rem;
@@ -64,9 +64,9 @@ const Header = () => {
 			<div>
 				{userState.isAuthenticated ? (
 					<>
-						<LikedBandNumber />
+						{/* <LikedBandNumber /> */}
 						<p>{userState.user.name}</p>
-						<img src={userState.user.avatar} alt='photo of the user avatar' />
+						<img src={userState.user.avatar} alt='user avatar' />
 						<i className='fa-solid fa-right-from-bracket' onClick={logout}></i>
 					</>
 				) : (

@@ -1,19 +1,31 @@
 import { useContext } from 'react';
-import UserContext from '../../../contexts/UserContext';
+import UserContext, { userActionTypes } from '../../../contexts/UserContext';
 import LoginFormContext, {
 	inputActionTypes
 } from '../../../contexts/LoginFormContext';
+import styled from 'styled-components';
+
+const ErrorMessage = styled.span`
+	color: red;
+	margin-bottom: 0;
+`;
 
 const LoginForm = ({ hideLoginForm }) => {
-	const { login } = useContext(UserContext);
+	const { userState, login, dispatch: userDispatch } = useContext(UserContext);
 	const { loginFormInputs, handleChange, dispatch } =
 		useContext(LoginFormContext);
 
-	const handleLogin = e => {
+	const handleLogin = async e => {
 		e.preventDefault();
-		login(loginFormInputs.username, loginFormInputs.password);
-		dispatch({ type: inputActionTypes.CLEAR_FORM });
-		hideLoginForm();
+		const loginSuccess = await login(
+			loginFormInputs.username,
+			loginFormInputs.password
+		);
+
+		if (loginSuccess) {
+			dispatch({ type: inputActionTypes.CLEAR_FORM });
+			hideLoginForm();
+		}
 	};
 
 	return (
@@ -37,9 +49,17 @@ const LoginForm = ({ hideLoginForm }) => {
 					onChange={handleChange}
 					required
 				/>
+				<ErrorMessage>{userState.errorMessage}</ErrorMessage>
 				<input type='submit' value='Log in' />
 			</form>
-			<i className='far fa-times-circle' onClick={hideLoginForm}></i>
+			<i
+				className='far fa-times-circle'
+				onClick={() => {
+					dispatch({ type: inputActionTypes.CLEAR_FORM });
+					userDispatch({ type: userActionTypes.SET_ERROR, payload: '' });
+					hideLoginForm();
+				}}
+			></i>
 		</div>
 	);
 };

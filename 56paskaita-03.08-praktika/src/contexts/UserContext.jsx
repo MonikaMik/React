@@ -32,7 +32,6 @@ const userReducer = (state, action) => {
 				user: null
 			};
 		case userActionTypes.SET_ERROR:
-			console.log(state);
 			return {
 				...state,
 				errorMessage: action.payload
@@ -47,18 +46,28 @@ const UserProvider = ({ children }) => {
 	const [userState, dispatch] = useReducer(userReducer, initialState);
 
 	const login = (username, password) => {
+		dispatch({ type: userActionTypes.SET_ERROR, payload: '' });
 		fetch(`http://localhost:8080/users?name=${username}`)
 			.then(res => res.json())
 			.then(users => {
-				console.log(users);
 				if (users.length > 0) {
 					const passwordMatch = bcrypt.compareSync(password, users[0].password);
-					passwordMatch
-						? dispatch({ type: userActionTypes.LOGIN, payload: users[0] })
-						: alert('bad login info');
+					if (passwordMatch) {
+						dispatch({ type: userActionTypes.LOGIN, payload: users[0] });
+						return true;
+					} else {
+						dispatch({
+							type: userActionTypes.SET_ERROR,
+							payload: 'Bad login information.'
+						});
+						return false;
+					}
 				} else {
-					return 'bad login info';
-					//alert('bad login info');
+					dispatch({
+						type: userActionTypes.SET_ERROR,
+						payload: 'User not found.'
+					});
+					return false;
 				}
 			});
 	};
@@ -74,7 +83,7 @@ const UserProvider = ({ children }) => {
 						type: userActionTypes.SET_ERROR,
 						payload: 'Username already taken. Please choose another username.'
 					});
-					return false; // Indicate failure due to error
+					return false;
 				}
 
 				return fetch('http://localhost:8080/users', {
@@ -87,14 +96,13 @@ const UserProvider = ({ children }) => {
 							type: userActionTypes.REGISTER,
 							payload: newUser
 						});
-						return true; // Indicate success
+						return true;
 					}
-					// Handle error if response not OK (e.g., bad request, server error)
 					dispatch({
 						type: userActionTypes.SET_ERROR,
 						payload: 'An error occurred during registration.'
 					});
-					return false; // Indicate failure due to error
+					return false;
 				});
 			})
 			.catch(error => {
@@ -103,7 +111,7 @@ const UserProvider = ({ children }) => {
 					type: userActionTypes.SET_ERROR,
 					payload: 'An error occurred. Please try again later.'
 				});
-				return false; // Indicate failure due to network or other error
+				return false;
 			});
 	};
 
