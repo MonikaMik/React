@@ -1,0 +1,79 @@
+{
+	"users": [
+		{
+			"id": "0",
+			"username": "mon",
+			"password": "lala",
+			"email": "mon@lala"
+		},
+		{
+			"id": "1",
+			"username": "rok",
+			"password": "baba",
+			"email": "rok@baba"
+		},
+		{
+			"id": "2",
+			"username": "kitten",
+			"password": "katkat",
+			"email": "kitten@kat"
+		},
+		{
+			"id": "3",
+			"username": "doggo",
+			"password": "dogdog",
+			"email": "doggo@dog"
+		},
+		{
+			"id": "c215d8c1-a14c-4e57-b3e4-dfd8c2026640"
+		},
+		{
+			"id": "f5956c0c-8567-4038-ae2a-06733a53ca1f",
+			"username": "monikaa",
+			"email": "monikacibirauskaite@yahoo.com",
+			"password": "asdf"
+		},
+		{
+			"id": "cf06ba1d-9060-4e7f-a541-6742991215a4",
+			"username": "asd",
+			"email": "monikacibirauskaite@yahoo.com",
+			"password": "asd"
+		},
+		{
+			"id": "ca167492-fdc1-43b4-a3ed-c76e9516bf1a",
+			"username": "asd",
+			"email": "monikacibirauskaite@yahoo.com",
+			"password": "asd"
+		}
+	],
+	"planets": [
+		{
+			"id": "1",
+			"name": "Jupiter",
+			"description": "Jupiter is the fifth planet from the Sun, and the largest in the solar system – more than twice as massive as the other planets combined.",
+			"picture": "https://science.nasa.gov/_ipx/animated_true&w_2048&f_webp/https://images-assets.nasa.gov/image/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~large.jpg%3Fw=1920%26h=1913%26fit=clip%26crop=faces%252Cfocalpoint",
+			"awayFromSun": 5
+		},
+		{
+			"id": "2",
+			"name": "Mercury",
+			"description": "Mercury is the closest planet to the Sun, and the smallest planet in our solar system - only slightly larger than Earth's Moon.",
+			"picture": "https://science.nasa.gov/wp-content/uploads/2023/04/EW0108829708G4release_mercury-jpg.webp?w=2048&format=webp",
+			"awayFromSun": 1
+		},
+		{
+			"id": "3",
+			"name": "Saturn",
+			"description": "Saturn is the sixth planet from the Sun, and the second largest in the solar system. It’s surrounded by beautiful rings.",
+			"picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/800px-Saturn_during_Equinox.jpg",
+			"awayFromSun": 6
+		},
+		{
+			"id": "e1a2df5d-6253-4b40-86a7-25f6eba352b3",
+			"name": "Venus",
+			"description": "Venus is the second planet from the Sun, and the sixth largest planet. It’s the hottest planet in our solar system.",
+			"picture": "https://science.nasa.gov/_ipx/animated_true&w_2048&f_webp/https://images-assets.nasa.gov/image/PIA00271/PIA00271~large.jpg%3Fw=1920%26h=1920%26fit=clip%26crop=faces%252Cfocalpoint",
+			"awayFromSun": "2"
+		}
+	]
+}

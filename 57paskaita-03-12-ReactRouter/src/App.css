@@ -1,0 +1,9 @@
+body {
+	margin: 0;
+	background-color: rgb(236, 236, 236);
+	font-family: Roboto;
+}
+
+main {
+	padding: 2rem;
+}
