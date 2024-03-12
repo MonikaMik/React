@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../../images/logo.png';
+import { Button } from '@mui/material';
 
 const StyledHeader = styled.header`
 	background-color: #191919;
@@ -14,6 +15,9 @@ const StyledHeader = styled.header`
 	padding: 0 2rem;
 	> img {
 		height: 80%;
+	}
+	.username {
+		margin: 0 2rem;
 	}
 	> nav {
 		> ul {
@@ -49,17 +53,20 @@ function Header() {
 				</ul>
 			</nav>
 			{loggedInUser ? (
-				<>
-					<span>{loggedInUser.username}</span>
-					<button
+				<div>
+					<span className='username'>{loggedInUser.username}</span>
+					<Button
+						variant='contained'
+						color='primary'
+						sx={{ placeSelf: 'end' }}
 						onClick={() => {
 							logout();
 							navigate('/');
 						}}
 					>
 						Log out
-					</button>
-				</>
+					</Button>
+				</div>
 			) : (
 				<nav>
 					<ul>
