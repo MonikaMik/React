@@ -18,6 +18,10 @@ const StyledHeader = styled.header`
 	}
 	.username {
 		margin: 0 2rem;
+		cursor: pointer;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	> nav {
 		> ul {
@@ -54,7 +58,14 @@ function Header() {
 			</nav>
 			{loggedInUser ? (
 				<div>
-					<span className='username'>{loggedInUser.username}</span>
+					<span
+						className='username'
+						onClick={() => {
+							navigate('/user');
+						}}
+					>
+						{loggedInUser.username}
+					</span>
 					<Button
 						variant='contained'
 						color='primary'

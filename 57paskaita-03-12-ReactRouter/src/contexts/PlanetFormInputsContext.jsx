@@ -8,6 +8,7 @@ const PlanetFormInputsProvider = ({ children }) => {
 		name: '',
 		awayFromSun: '',
 		description: '',
+		overview: '',
 		picture: ''
 	});
 
@@ -24,6 +25,7 @@ const PlanetFormInputsProvider = ({ children }) => {
 			name: '',
 			awayFromSun: '',
 			description: '',
+			overview: '',
 			picture: ''
 		});
 	};
@@ -33,7 +35,8 @@ const PlanetFormInputsProvider = ({ children }) => {
 			value={{
 				formInputs,
 				onChangeF,
-				clearForm
+				clearForm,
+				setFormInputs
 			}}
 		>
 			{children}

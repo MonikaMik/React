@@ -1,26 +1,42 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import PlanetContext from '../../contexts/PlanetContext';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import { Button } from '@mui/material';
-import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
+import SendIcon from '@mui/icons-material/Send';
 import PlanetFormInputsContext from '../../contexts/PlanetFormInputsContext';
 import { v4 as uuid } from 'uuid';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const AddNewCard = () => {
-	const { addPlanet } = useContext(PlanetContext);
-	const { formInputs, onChangeF, clearForm } = useContext(
+const EditPlanetPage = () => {
+	const { id } = useParams();
+	const { editPlanet } = useContext(PlanetContext);
+	const { formInputs, onChangeF, clearForm, setFormInputs } = useContext(
 		PlanetFormInputsContext
 	);
 	const navigate = useNavigate();
 
+	useEffect(() => {
+		fetch(`http://localhost:8080/planets/${id}`)
+			.then(res => res.json())
+			.then(data => {
+				setFormInputs({
+					id: id,
+					name: data.name,
+					awayFromSun: data.awayFromSun,
+					description: data.description,
+					overview: data.overview,
+					picture: data.picture
+				});
+			});
+	}, []);
+
 	const formSubmit = e => {
 		e.preventDefault();
 
-		const newPlanet = {
-			id: uuid(),
+		const editedPlanet = {
+			id: id,
 			name: formInputs.name,
 			description: formInputs.description,
 			overview: formInputs.overview,
@@ -28,13 +44,13 @@ const AddNewCard = () => {
 			awayFromSun: formInputs.awayFromSun
 		};
 
-		addPlanet(newPlanet);
+		editPlanet(editedPlanet);
 		clearForm();
-		navigate('/cards');
+		navigate(-1);
 	};
 	return (
 		<section>
-			<h1>Add a planet</h1>
+			<h1>Edit planet</h1>
 			<Box
 				component='form'
 				sx={{
@@ -42,7 +58,6 @@ const AddNewCard = () => {
 					display: 'flex',
 					flexDirection: 'column',
 					gap: '1rem'
-					// '& .MuiTextField-root': { m: 1, minWidth: '30ch' }
 				}}
 				onSubmit={formSubmit}
 			>
@@ -133,4 +148,4 @@ const AddNewCard = () => {
 		</section>
 	);
 };
-export default AddNewCard;
+export default EditPlanetPage;

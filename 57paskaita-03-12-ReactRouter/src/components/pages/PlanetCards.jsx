@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import styled from 'styled-components';
+import UsersContext from '../../contexts/UsersContext';
 
 const Item = experimentalStyled(Paper)(({ theme }) => ({
 	backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -25,20 +26,23 @@ const CardsPageTitle = styled.div`
 
 const PlanetCards = () => {
 	const { planets } = useContext(PlanetContext);
+	const { loggedInUser } = useContext(UsersContext);
 	const navigate = useNavigate();
 
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<CardsPageTitle>
 				<h1>Card Page</h1>
-				<Button
-					variant='outlined'
-					onClick={() => {
-						navigate('/addCard');
-					}}
-				>
-					Add a planet
-				</Button>
+				{loggedInUser && (
+					<Button
+						variant='outlined'
+						onClick={() => {
+							navigate('add');
+						}}
+					>
+						Add a planet
+					</Button>
+				)}
 			</CardsPageTitle>
 			<Grid
 				container

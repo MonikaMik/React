@@ -1,0 +1,25 @@
+{
+	"products": [
+		{
+			"id": "1",
+			"name": "Tech jacket",
+			"price": 299,
+			"description": "Stylish, futuristic, versatile tech jacket - perfect for any weather. exceptionally comfortable.",
+			"image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQdASb4johRjgTAGuU_t3SB_9aupcIsNiDse6eM73eIq_EVj-Bh"
+		},
+		{
+			"id": "64fd0c53-2103-4f3f-a9d1-9cba6ad947d1",
+			"name": "Shirt",
+			"price": 30,
+			"description": "Dusky blue, loose fitting men's shirt. Made out of high quality organic cotton.",
+			"image": "https://insider.clothing/cdn/shop/files/1_d99de45e-9f94-4fbb-a3bf-13cdf2a7373e.jpg?v=1709925074&width=1206"
+		},
+		{
+			"id": "91cf4513-f509-4a7f-83c0-d16378ce87b0",
+			"name": "Snow jacket",
+			"price": 199,
+			"description": "A/DIV Day Break - Technical Snow Jacket for Women",
+			"image": "https://images.boardriders.com/globalGrey/billabong-products/all/default/large/f6jf17bif2_billabong,v_4947_frt1.jpg"
+		}
+	]
+}

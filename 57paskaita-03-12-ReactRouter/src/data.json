@@ -4,52 +4,36 @@
       "id": "0",
       "username": "mon",
       "password": "lala",
-      "email": "mon@lala"
-    },
-    {
-      "id": "1",
-      "username": "rok",
-      "password": "baba",
-      "email": "rok@baba"
-    },
-    {
-      "id": "2",
-      "username": "kitten",
-      "password": "katkat",
-      "email": "kitten@kat"
-    },
-    {
-      "id": "3",
-      "username": "doggo",
-      "password": "dogdog",
-      "email": "doggo@dog"
-    },
-    {
-      "id": "c215d8c1-a14c-4e57-b3e4-dfd8c2026640"
+      "email": "mon@lala",
+      "role": "user"
     },
     {
       "id": "f5956c0c-8567-4038-ae2a-06733a53ca1f",
       "username": "monikaa",
       "email": "monikacibirauskaite@yahoo.com",
-      "password": "asdf"
+      "password": "asdf",
+      "role": "user"
     },
     {
       "id": "cf06ba1d-9060-4e7f-a541-6742991215a4",
       "username": "asd",
       "email": "monikacibirauskaite@yahoo.com",
-      "password": "asd"
+      "password": "asd",
+      "role": "user"
     },
     {
       "id": "ca167492-fdc1-43b4-a3ed-c76e9516bf1a",
       "username": "asd",
       "email": "monikacibirauskaite@yahoo.com",
-      "password": "asd"
+      "password": "asd",
+      "role": "user"
     },
     {
       "id": "a635c77e-3b79-4763-80bd-575503fdf458",
       "username": "Monika",
       "email": "monikacibirauskaite@yahoo.com",
-      "password": "kacius"
+      "password": "kacius",
+      "role": "moderator"
     }
   ],
   "planets": [
@@ -57,6 +41,7 @@
       "id": "1",
       "name": "Jupiter",
       "description": "Jupiter is the fifth planet from the Sun, and the largest in the solar system – more than twice as massive as the other planets combined.",
+      "overview": "Jupiter is the fifth planet from our Sun and is, by far, the largest planet in the solar system – more than twice as massive as all the other planets combined. Jupiter's stripes and swirls are actually cold, windy clouds of ammonia and water, floating in an atmosphere of hydrogen and helium. Jupiter’s iconic Great Red Spot is a giant storm bigger than Earth that has raged for hundreds of years. Jupiter is named for the king of the ancient Roman gods.​",
       "picture": "https://science.nasa.gov/_ipx/animated_true&w_2048&f_webp/https://images-assets.nasa.gov/image/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~large.jpg%3Fw=1920%26h=1913%26fit=clip%26crop=faces%252Cfocalpoint",
       "awayFromSun": 5
     },
@@ -64,13 +49,15 @@
       "id": "2",
       "name": "Mercury",
       "description": "Mercury is the closest planet to the Sun, and the smallest planet in our solar system - only slightly larger than Earth's Moon.",
+      "overview": "Mercury—the smallest planet in our solar system and nearest to the Sun—is only slightly larger than Earth's Moon. Its surface is covered in tens of thousands of impact craters. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as 11 times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system— that title belongs to nearby Venus, thanks to its dense atmosphere. But Mercury is the fastest planet, zipping around the Sun every 88 Earth days. Mercury is appropriately named for the swiftest of the ancient Roman gods.",
       "picture": "https://science.nasa.gov/wp-content/uploads/2023/04/EW0108829708G4release_mercury-jpg.webp?w=2048&format=webp",
-      "awayFromSun": 1
+      "awayFromSun": "1"
     },
     {
       "id": "3",
       "name": "Saturn",
       "description": "Saturn is the sixth planet from the Sun, and the second largest in the solar system. It’s surrounded by beautiful rings.",
+      "overview": "Saturn is the sixth planet from the Sun and the second largest planet in our solar system. Adorned with a dazzling system of icy rings, Saturn is unique among the planets. It is not the only planet to have rings, but none are as spectacular or as complex as Saturn's. Like fellow gas giant Jupiter, Saturn is a massive ball made mostly of hydrogen and helium. The farthest planet from Earth discovered by the unaided human eye, Saturn has been known since ancient times. The planet is named for the Roman god of agriculture and wealth, who was also the father of Jupiter.",
       "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/800px-Saturn_during_Equinox.jpg",
       "awayFromSun": 6
     },
@@ -78,6 +65,7 @@
       "id": "e1a2df5d-6253-4b40-86a7-25f6eba352b3",
       "name": "Venus",
       "description": "Venus is the second planet from the Sun, and the sixth largest planet. It’s the hottest planet in our solar system.",
+      "overview": "Venus is a cloud-swaddled planet named for a love goddess, and often called Earth’s twin. But pull up a bit closer, and Venus turns hellish. Our nearest planetary neighbor, the second planet from the Sun, has a surface hot enough to melt lead. The atmosphere is so thick that, from the surface, the Sun is just a smear of light. Venus is a cloud-swaddled planet named for a love goddess, and often called Earth’s twin. But pull up a bit closer, and Venus turns hellish. Our nearest planetary neighbor, the second planet from the Sun, has a surface hot enough to melt lead. The atmosphere is so thick that, from the surface, the Sun is just a smear of light.",
       "picture": "https://science.nasa.gov/_ipx/animated_true&w_2048&f_webp/https://images-assets.nasa.gov/image/PIA00271/PIA00271~large.jpg%3Fw=1920%26h=1920%26fit=clip%26crop=faces%252Cfocalpoint",
       "awayFromSun": "2"
     }
