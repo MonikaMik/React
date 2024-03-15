@@ -71,7 +71,8 @@ function AddNewCard() {
 		formState: { errors }
 	} = useForm({
 		resolver: yupResolver(schema),
-		mode: 'onBlur'
+		mode: 'onBlur',
+		reValidateMode: 'onChange'
 	});
 
 	const onSubmit = data => {
@@ -94,22 +95,22 @@ function AddNewCard() {
 				<div>
 					<label htmlFor='name'>Name: </label>
 					<input id='name' {...register('name')} />
-					{errors.name && <p>{errors.name.message}</p>}
+					<p>{errors.name?.message}</p>
 				</div>
 				<div>
 					<label htmlFor='price'>Price: </label>
 					<input id='price' type='number' {...register('price')} />
-					{errors.price && <p>{errors.price.message}</p>}
+					<p>{errors.price?.message}</p>
 				</div>
 				<div>
 					<label htmlFor='description'>Description: </label>
 					<textarea id='description' {...register('description')} />
-					{errors.description && <p>{errors.description.message}</p>}
+					<p>{errors.description?.message}</p>
 				</div>
 				<div>
 					<label htmlFor='image'>Product image url: </label>
 					<input id='image' type='url' {...register('image')} />
-					{errors.image && <p>{errors.image.message}</p>}
+					<p>{errors.image?.message}</p>
 				</div>
 				<input type='submit' value='Add product' />
 			</form>

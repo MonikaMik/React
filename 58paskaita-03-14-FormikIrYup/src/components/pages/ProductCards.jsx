@@ -16,7 +16,7 @@ const ProductCards = () => {
 
 	return (
 		<>
-			<Link to='/add'> Add new Product </Link>
+			<Link to='add'> Add new Product </Link>
 			<ProductSection>
 				{products.map((product, i) => (
 					<ProductCard key={i} product={product} />
