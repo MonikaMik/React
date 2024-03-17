@@ -4,7 +4,6 @@ import PlantCard from '../organisms/PlantCard';
 import SecondaryTitle from '../atoms/typography/SecondaryTitle';
 import styled from 'styled-components';
 import Subheading from '../atoms/typography/Subheading';
-import Paragraph from '../atoms/typography/Paragraph';
 import Icon from '../atoms/Icon';
 import { Link } from 'react-router-dom';
 

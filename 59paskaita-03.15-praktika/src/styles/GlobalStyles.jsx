@@ -17,6 +17,9 @@ const GlobalStyle = createGlobalStyle`
     color:  var(--primary-color);
     margin: 0;
   }
+  main {
+    min-height: 73.05svh;
+  }
 `;
 
 export default GlobalStyle;

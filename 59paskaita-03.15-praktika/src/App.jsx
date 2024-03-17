@@ -6,6 +6,7 @@ import Home from './components/pages/Home';
 import PlantCards from './components/pages/PlantCards';
 import AddAPlant from './components/pages/AddAPlant';
 import Footer from './components/organisms/Footer';
+import PlantInformation from './components/pages/PlantInformation';
 
 const App = () => {
 	return (
@@ -18,6 +19,7 @@ const App = () => {
 					<Route path='/plants'>
 						<Route index element={<PlantCards />} />
 						<Route path='add' element={<AddAPlant />} />
+						<Route path=':id' element={<PlantInformation />} />
 					</Route>
 				</Routes>
 			</main>

@@ -74,8 +74,8 @@ const PlantForm = () => {
 			image: '',
 			instructions: ''
 		},
-		mode: 'onBlur',
-		revalidateMode: 'onChange'
+		mode: 'onBlur'
+		// reValidateMode: 'onTouched'
 	});
 
 	const onSubmit = data => {

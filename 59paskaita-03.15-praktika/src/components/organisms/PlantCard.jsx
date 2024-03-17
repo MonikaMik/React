@@ -6,6 +6,7 @@ import Button from '../atoms/Button';
 import ProductTitle from '../atoms/typography/ProductTitle';
 import styled from 'styled-components';
 import Icon from '../atoms/Icon';
+import { Link } from 'react-router-dom';
 
 const StyledPlantCard = styled.article`
 	background-color: white;
@@ -14,7 +15,7 @@ const StyledPlantCard = styled.article`
 	padding: 15px;
 	width: 280px;
 	position: relative;
-	> i {
+	> a {
 		position: absolute;
 		right: 16px;
 		bottom: 16px;
@@ -46,7 +47,9 @@ const PlantCard = ({ plant }) => {
 				<OldPrice oldPrice={plant.price} onSale={plant.salePrice} />
 			</PriceContainer>
 			<Button text='Add to cart' />
-			<Icon iconClass={'bi bi-info-circle'} />
+			<Link to={plant.id}>
+				<Icon iconClass={'bi bi-info-circle'} />
+			</Link>
 		</StyledPlantCard>
 	);
 };

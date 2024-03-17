@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Paragraph from '../atoms/typography/Paragraph';
 import ParagraphNoMargin from '../atoms/typography/ParagraphNoMargin';
 
 const StyledCopyRight = styled.div`
