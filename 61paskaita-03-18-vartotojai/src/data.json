@@ -1,42 +1,47 @@
 {
-	"users": [
-		{
-			"id": 1,
-			"username": "Monika",
-			"password": "kacius",
-			"role": "admin"
-		},
-		{
-			"id": 2,
-			"username": "Rytis",
-			"password": "password",
-			"role": "user"
-		}
-	],
-	"cards": [
-		{
-			"id": 1,
-			"userId": 1,
-			"title": "Card 1",
-			"description": "This is card 1"
-		},
-		{
-			"id": 2,
-			"userId": 2,
-			"title": "Card 2",
-			"description": "This is card 2"
-		},
-		{
-			"id": 3,
-			"userId": 1,
-			"title": "Card 3",
-			"description": "This is card 3"
-		},
-		{
-			"id": 4,
-			"userId": 1,
-			"title": "Card 4",
-			"description": "This is card 4"
-		}
-	]
+  "users": [
+    {
+      "id": "1",
+      "username": "Monika",
+      "password": "kacius",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "Rytis",
+      "password": "password",
+      "role": "user"
+    },
+    {
+      "id": "e33c37aa-f99e-4c2f-bb04-57c9182ba3a8",
+      "username": "Monikaa",
+      "password": "Kacius123!"
+    }
+  ],
+  "cards": [
+    {
+      "id": "1",
+      "userId": 1,
+      "title": "Card 1",
+      "description": "This is card 1"
+    },
+    {
+      "id": "2",
+      "userId": 2,
+      "title": "Card 2",
+      "description": "This is card 2"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "title": "Card 3",
+      "description": "This is card 3"
+    },
+    {
+      "id": "4",
+      "userId": 1,
+      "title": "Card 4",
+      "description": "This is card 4"
+    }
+  ]
 }

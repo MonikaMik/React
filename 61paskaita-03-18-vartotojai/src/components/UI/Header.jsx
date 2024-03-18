@@ -1,5 +1,7 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { useContext } from 'react';
+import UsersContext from '../../contexts/UsersContext';
 
 const StyledHeader = styled.header`
 	padding: 0 20px;
@@ -9,7 +11,7 @@ const StyledHeader = styled.header`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	> div {
+	> div:nth-child(1) {
 		height: 100%;
 		> a {
 			> img {
@@ -17,7 +19,6 @@ const StyledHeader = styled.header`
 			}
 		}
 	}
-
 	> nav ul {
 		display: flex;
 		list-style: none;
@@ -36,9 +37,28 @@ const StyledHeader = styled.header`
 			}
 		}
 	}
+	> div:last-child {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		> button {
+			background-color: #ff4f6c;
+			color: white;
+			border: none;
+			padding: 5px 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			&:hover {
+				background-color: #d000c6;
+			}
+		}
+	}
 `;
 
 const Header = () => {
+	const { loggedInUser, setLoggedInUser } = useContext(UsersContext);
+	const navigate = useNavigate();
+
 	return (
 		<StyledHeader>
 			<div>
@@ -57,20 +77,34 @@ const Header = () => {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/cards'>Cards</NavLink>
+						<NavLink to='/cards/allCards'>Cards</NavLink>
 					</li>
 				</ul>
 			</nav>
-			<nav>
-				<ul>
-					<li>
-						<NavLink to='user/register'>Register</NavLink>
-					</li>
-					<li>
-						<NavLink to='user/login'>Login</NavLink>
-					</li>
-				</ul>
-			</nav>
+			{loggedInUser ? (
+				<div>
+					<span>Hi, {loggedInUser.username}</span>
+					<button
+						onClick={() => {
+							setLoggedInUser(false);
+							navigate('/');
+						}}
+					>
+						Log Out
+					</button>
+				</div>
+			) : (
+				<nav>
+					<ul>
+						<li>
+							<NavLink to='user/register'>Register</NavLink>
+						</li>
+						<li>
+							<NavLink to='user/login'>Login</NavLink>
+						</li>
+					</ul>
+				</nav>
+			)}
 		</StyledHeader>
 	);
 };

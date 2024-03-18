@@ -10,23 +10,17 @@ const reducer = (state, action) => {
 	switch (action.type) {
 		case UsersActionTypes.FETCH_USERS:
 			return action.payload;
-		case 'ADD_USER':
-			return {
-				...state,
-				users: [...state.users, action.payload]
-			};
-		case 'REMOVE_USER':
-			return {
-				...state,
-				users: state.users.filter(user => user.id !== action.payload)
-			};
+		case UsersActionTypes.ADD_USER:
+			return [...state, action.payload];
+		case UsersActionTypes.REMOVE_USER:
+			return state.filter(user => user.id !== action.payload);
 		default:
 			console.error('Unknown action type');
 			return state;
 	}
 };
 
-export const UsersContext = createContext();
+const UsersContext = createContext();
 
 export const UsersProvider = ({ children }) => {
 	const [loggedInUser, setLoggedInUser] = useState(false);
@@ -42,6 +36,13 @@ export const UsersProvider = ({ children }) => {
 
 	const addUser = user => {
 		dispatch({ type: UsersActionTypes.ADD_USER, payload: user });
+		fetch(`http://localhost:8080/users`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(user)
+		});
 	};
 
 	const removeUser = userId => {
@@ -51,7 +52,7 @@ export const UsersProvider = ({ children }) => {
 	return (
 		<UsersContext.Provider
 			value={{
-				users: users,
+				users,
 				loggedInUser,
 				setLoggedInUser,
 				addUser,
@@ -62,3 +63,5 @@ export const UsersProvider = ({ children }) => {
 		</UsersContext.Provider>
 	);
 };
+
+export default UsersContext;

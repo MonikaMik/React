@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+import CardsContext from '../../contexts/CardsContext';
+import { CardsActionTypes } from '../../contexts/CardsContext';
+import { useContext } from 'react';
+import UsersContext from '../../contexts/UsersContext';
 
 const StyledCard = styled.div`
 	border: 5px double salmon;
@@ -18,10 +22,24 @@ const StyledCard = styled.div`
 `;
 
 const Card = ({ card }) => {
+	const { dispatch } = useContext(CardsContext);
+	const { loggedInUser } = useContext(UsersContext);
 	return (
 		<StyledCard>
 			<h3>{card.title}</h3>
 			<p>{card.description}</p>
+			{loggedInUser.id === card.userId && (
+				<button
+					onClick={() => {
+						dispatch({
+							type: CardsActionTypes.DELETE_CARD,
+							payload: card.id
+						});
+					}}
+				>
+					Delete
+				</button>
+			)}
 		</StyledCard>
 	);
 };

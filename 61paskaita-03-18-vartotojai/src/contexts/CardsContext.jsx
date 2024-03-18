@@ -2,14 +2,30 @@ import { createContext, useEffect, useReducer } from 'react';
 
 const CardsContext = createContext();
 
-const CardsActionTypes = {
-	FETCH_CARDS: 'FETCH_CARDS'
+export const CardsActionTypes = {
+	FETCH_CARDS: 'FETCH_CARDS',
+	ADD_CARD: 'ADD_CARD',
+	DELETE_CARD: 'DELETE_CARD'
 };
 
 const reducer = (state, action) => {
 	switch (action.type) {
 		case CardsActionTypes.FETCH_CARDS:
 			return action.payload;
+		case CardsActionTypes.ADD_CARD:
+			fetch(`http://localhost:8080/cards`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(action.payload)
+			});
+			return [...state, action.payload];
+		case CardsActionTypes.DELETE_CARD:
+			fetch(`http://localhost:8080/cards/${action.payload}`, {
+				method: 'DELETE'
+			});
+			return state.filter(card => card.id !== action.payload);
 		default:
 			console.error('Unknown action type');
 			return state;

@@ -1,8 +1,57 @@
-import { UsersContext } from '../../contexts/UsersContext';
+import UsersContext from '../../contexts/UsersContext';
 import { useContext, useState } from 'react';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
+import styled from 'styled-components';
+
+const StyledSection = styled.section`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 70px;
+	> h1 {
+		font-size: 3rem;
+	}
+	> form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		> div {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+
+			> label {
+				align-self: center;
+			}
+			> input {
+				min-width: 14rem;
+				border-radius: 5px;
+				border: 1px solid #ccc;
+				padding: 0.2rem 0.5rem;
+			}
+			> p {
+				grid-column: span 3;
+				color: red;
+			}
+		}
+		> input[type='submit'] {
+			grid-column: span 2;
+			background-color: #ff4f6c;
+			color: white;
+			border: none;
+			padding: 5px 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			&:hover {
+				background-color: #d000c6;
+			}
+		}
+	}
+	> p {
+		color: red;
+	}
+`;
 
 const Login = () => {
 	const { users, setUsers, setLoggedInUser } = useContext(UsersContext);
@@ -35,7 +84,7 @@ const Login = () => {
 	});
 
 	return (
-		<section>
+		<StyledSection>
 			<h1>Login</h1>
 			<form onSubmit={formik.handleSubmit}>
 				<div>
@@ -69,7 +118,7 @@ const Login = () => {
 				<input type='submit' value='Log In' />
 			</form>
 			{wrongCredentials && <p>Wrong credentials</p>}
-		</section>
+		</StyledSection>
 	);
 };
 export default Login;
