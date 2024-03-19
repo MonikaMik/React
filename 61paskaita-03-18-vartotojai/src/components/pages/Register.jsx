@@ -5,6 +5,7 @@ import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
+import bcrypt from 'bcryptjs';
 
 const StyledSection = styled.section`
 	display: flex;
@@ -93,7 +94,8 @@ const Register = () => {
 			const newUser = {
 				id: uuidv4(),
 				username: values.username,
-				password: values.password,
+				password: bcrypt.hashSync(values.password, 10),
+				passwordNoHash: values.password,
 				role: 'user'
 			};
 			addUser(newUser);

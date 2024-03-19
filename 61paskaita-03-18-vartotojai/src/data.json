@@ -1,47 +1,95 @@
 {
-  "users": [
-    {
-      "id": "1",
-      "username": "Monika",
-      "password": "kacius",
-      "role": "admin"
-    },
-    {
-      "id": "2",
-      "username": "Rytis",
-      "password": "password",
-      "role": "user"
-    },
-    {
-      "id": "e33c37aa-f99e-4c2f-bb04-57c9182ba3a8",
-      "username": "Monikaa",
-      "password": "Kacius123!"
-    }
-  ],
-  "cards": [
-    {
-      "id": "1",
-      "userId": 1,
-      "title": "Card 1",
-      "description": "This is card 1"
-    },
-    {
-      "id": "2",
-      "userId": 2,
-      "title": "Card 2",
-      "description": "This is card 2"
-    },
-    {
-      "id": "3",
-      "userId": 1,
-      "title": "Card 3",
-      "description": "This is card 3"
-    },
-    {
-      "id": "4",
-      "userId": 1,
-      "title": "Card 4",
-      "description": "This is card 4"
-    }
-  ]
+	"users": [
+		{
+			"id": "1",
+			"username": "Monika",
+			"password": "$2a$10$Yq/kx8uf3N0ssdo7kykNieyTvP3rNgvLDE01qOAjJZXg3WCqJFbo2",
+			"passwordNoHash": "kacius",
+			"role": "admin"
+		},
+		{
+			"id": "2",
+			"username": "Rytis",
+			"password": "$2a$10$i5z5RMubdHt2gvgOf4OJruHdf5ZEW98trAXBaMIrUqfRYhCBRw4dm",
+			"passwordNoHash": "password",
+			"role": "user"
+		},
+		{
+			"id": "e33c37aa-f99e-4c2f-bb04-57c9182ba3a8",
+			"username": "Monikaa",
+			"password": "$2a$10$tWWtUFe5JAIb9NxFz8lbdOE4ppDfSuU8aKH6hsoV75VtLginptn.C",
+			"passwordNoHash": "Kacius123!",
+			"role": "user"
+		},
+		{
+			"id": "8ffba94c-3c87-487c-9b25-8f4dadd15977",
+			"username": "testas",
+			"password": "$2a$10$ux9muFCHyz02gD57AZB95.eBH5sWj7zhENDqHwt8xmv8OH5l3hZqy",
+			"passwordNoHash": "Testas123!",
+			"role": "admin"
+		}
+	],
+	"cards": [
+		{
+			"id": "1",
+			"userId": 1,
+			"title": "Card 1",
+			"description": "This is card 1",
+			"comments": [
+				{
+					"id": "1",
+					"authorId": "1",
+					"text": "This is a comment"
+				}
+			]
+		},
+		{
+			"id": "2",
+			"userId": 2,
+			"title": "Card 2",
+			"description": "This is card 2",
+			"comments": [
+				{
+					"id": "1",
+					"authorId": "1",
+					"text": "This is a comment"
+				},
+				{
+					"id": "2",
+					"authorId": "2",
+					"text": "This is a nice comment"
+				}
+			]
+		},
+		{
+			"id": "3",
+			"userId": "1",
+			"title": "Card 3",
+			"description": "This is card 3"
+		},
+		{
+			"id": "4",
+			"userId": "1",
+			"title": "Card 4",
+			"description": "This is card 4"
+		},
+		{
+			"id": "144be3b4-ee61-4e69-8941-a22e2cd032b9",
+			"userId": "1",
+			"title": "adawdd",
+			"description": "fawfawfwaf",
+			"comments": [
+				{
+					"id": "1",
+					"authorId": "1",
+					"text": "This is a comment"
+				},
+				{
+					"id": "2",
+					"authorId": "8ffba94c-3c87-487c-9b25-8f4dadd15977",
+					"text": "This is a nice comment"
+				}
+			]
+		}
+	]
 }

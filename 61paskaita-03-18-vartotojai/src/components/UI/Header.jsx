@@ -11,6 +11,14 @@ const StyledHeader = styled.header`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	> div > a {
+		font-size: 1.1rem;
+		color: black;
+		text-decoration: none;
+		&:hover {
+			color: #ff4f6c;
+		}
+	}
 	> div:nth-child(1) {
 		height: 100%;
 		> a {
@@ -83,7 +91,12 @@ const Header = () => {
 			</nav>
 			{loggedInUser ? (
 				<div>
-					<span>Hi, {loggedInUser.username}</span>
+					{loggedInUser.role && loggedInUser.role === 'admin' && (
+						<Link to='/user/admin'>Admin Panel</Link>
+					)}
+					<Link to={`/user/${loggedInUser.username}`}>
+						<span>{loggedInUser.username}</span>
+					</Link>
 					<button
 						onClick={() => {
 							setLoggedInUser(false);

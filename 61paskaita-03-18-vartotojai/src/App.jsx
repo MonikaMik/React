@@ -9,6 +9,9 @@ import Footer from './components/UI/Footer';
 import AddNewCard from './components/pages/AddNewCard';
 import UsersContext from './contexts/UsersContext';
 import { useContext } from 'react';
+import OneCard from './components/pages/OneCard';
+import UserPage from './components/pages/UserPage';
+import AdminPanel from './components/pages/AdminPanel';
 
 const App = () => {
 	const { loggedInUser } = useContext(UsersContext);
@@ -27,10 +30,27 @@ const App = () => {
 								loggedInUser ? <AddNewCard /> : <Navigate to='/user/login' />
 							}
 						/>
+						<Route path=':id' element={<OneCard />} />
 					</Route>
 					<Route path='/user'>
 						<Route path='login' element={<Login />} />
 						<Route path='register' element={<Register />} />
+						<Route
+							path=':name'
+							element={
+								loggedInUser ? <UserPage /> : <Navigate to='/user/login' />
+							}
+						/>
+						<Route
+							path='admin'
+							element={
+								loggedInUser.role ? (
+									<AdminPanel />
+								) : (
+									<Navigate to='/user/login' />
+								)
+							}
+						/>
 					</Route>
 				</Routes>
 			</main>

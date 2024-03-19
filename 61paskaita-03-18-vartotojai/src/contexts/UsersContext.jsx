@@ -3,7 +3,8 @@ import { createContext, useReducer, useEffect, useState } from 'react';
 export const UsersActionTypes = {
 	FETCH_USERS: 'FETCH_USERS',
 	ADD_USER: 'ADD_USER',
-	REMOVE_USER: 'REMOVE_USER'
+	REMOVE_USER: 'REMOVE_USER',
+	CHANGE_ROLE: 'CHANGE_ROLE'
 };
 
 const reducer = (state, action) => {
@@ -14,6 +15,16 @@ const reducer = (state, action) => {
 			return [...state, action.payload];
 		case UsersActionTypes.REMOVE_USER:
 			return state.filter(user => user.id !== action.payload);
+		case UsersActionTypes.CHANGE_ROLE:
+			return state.map(user => {
+				if (user.id === action.payload.userId) {
+					return {
+						...user,
+						role: action.payload.role
+					};
+				}
+				return user;
+			});
 		default:
 			console.error('Unknown action type');
 			return state;
@@ -45,6 +56,20 @@ export const UsersProvider = ({ children }) => {
 		});
 	};
 
+	const setUserRole = (id, newRole) => {
+		dispatch({
+			type: UsersActionTypes.CHANGE_ROLE,
+			payload: { role: newRole, userId: id }
+		});
+		fetch(`http://localhost:8080/users/${id}`, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ role: newRole })
+		});
+	};
+
 	const removeUser = userId => {
 		dispatch({ type: UsersActionTypes.REMOVE_USER, payload: userId });
 	};
@@ -56,7 +81,8 @@ export const UsersProvider = ({ children }) => {
 				loggedInUser,
 				setLoggedInUser,
 				addUser,
-				removeUser
+				removeUser,
+				setUserRole
 			}}
 		>
 			{children}

@@ -34,24 +34,30 @@ const StyledSection = styled.section`
 	}
 `;
 
-const Cards = () => {
+const UserPage = () => {
 	const { cards } = useContext(CardsContext);
-	const { loggedInUser } = useContext(UsersContext);
 	const location = useLocation();
+	const { loggedInUser } = useContext(UsersContext);
+
+	const filteredCards = cards.filter(card => card.userId === loggedInUser.id);
+
 	return (
 		<StyledSection>
-			<h1>All our cards</h1>
-			{loggedInUser && (
-				<p>
-					<Link to='/cards/addNew'>Add new card</Link>
-				</p>
+			<h1>All {loggedInUser.username} cards</h1>
+			<p>
+				<Link to='/cards/addNew'>Add new card</Link>
+			</p>
+
+			{filteredCards.length ? (
+				filteredCards.map(card => (
+					<div>
+						<Card key={card.id} card={card} location={location} />
+					</div>
+				))
+			) : (
+				<p>No cards yet...</p>
 			)}
-			<div>
-				{cards.map(card => (
-					<Card key={card.id} card={card} location={location} />
-				))}
-			</div>
 		</StyledSection>
 	);
 };
-export default Cards;
+export default UserPage;
