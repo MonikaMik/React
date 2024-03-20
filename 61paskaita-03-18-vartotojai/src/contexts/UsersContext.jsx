@@ -72,6 +72,9 @@ export const UsersProvider = ({ children }) => {
 
 	const removeUser = userId => {
 		dispatch({ type: UsersActionTypes.REMOVE_USER, payload: userId });
+		fetch(`http://localhost:8080/users/${userId}`, {
+			method: 'DELETE'
+		});
 	};
 
 	return (
